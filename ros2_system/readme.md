@@ -9,7 +9,7 @@ sudo apt update
 sudo apt install -y git python3-pip python3-colcon-common-extensions python3-rosdep
 ```
 
-## 2. Inicializar rosdep (solo si nunca se ha hecho en esta máquina)
+## 2. Inicializar rosdep
 
 ```bash
 sudo rosdep init
@@ -73,7 +73,7 @@ Si aparece en la lista, la instalación quedó bien.
 ros2 launch foundation_pose_tf teleop_full.launch.py
 ```
 
-⚠️ **Antes de lanzar, verifica que las IPs por defecto del launch file coincidan con tu red actual.** El launch usa `robot_ip` y `ros_ip` como valores fijos por defecto — si tu red es distinta (por ejemplo, en otra VM, otra oficina, u otro router), el lanzamiento fallará silenciosamente o no conectará con el robot ni con Unity.
+**Antes de lanzar, verifica que las IPs por defecto del launch file coincidan con tu red actual.** El launch usa `robot_ip` y `ros_ip` como valores fijos por defecto — si tu red es distinta (por ejemplo, en otra VM, otra oficina, u otro router), el lanzamiento fallará silenciosamente o no conectará con el robot ni con Unity.
 
 Revisa la IP real de tu PC con:
 ```bash
@@ -87,9 +87,3 @@ ros2 launch foundation_pose_tf teleop_full.launch.py robot_ip:=<IP_DEL_ROBOT> ro
 ```
 
 ---
-
-## Notas
-
-- El robot debe estar encendido y en la misma red que esta PC antes de lanzar.
-- Los tres procesos (ROS-TCP-Endpoint, driver del Lite6 con gripper, nodo del gripper, y `vr_bridge`) se lanzan juntos con el único comando del paso 8. `Ctrl+C` una sola vez los cierra a todos.
-- Unity corre por separado (en otra máquina, típicamente Windows) y debe apuntar a la IP de `ros_ip` en el campo "ROS2 IP" dentro de la escena.
