@@ -25,13 +25,6 @@ Este repo usa submódulos de git (`xarm_ros2`, `ROS-TCP-Endpoint`), así que **e
 cd ~/Documents
 git clone --recurse-submodules https://github.com/vhzuniga/Teleoperacion-con-MR.git VR---Robot---Teleoperation
 ```
-
-Si alguien ya clonó sin el flag por error, se arregla así:
-```bash
-cd VR---Robot---Teleoperation
-git submodule update --init --recursive
-```
-
 ## 4. Instalar las dependencias de los paquetes ROS 2
 
 ```bash
