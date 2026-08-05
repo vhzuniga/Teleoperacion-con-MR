@@ -38,7 +38,7 @@ rosdep install --from-paths src --ignore-src -r -y
 `xarm_ros2` trae paquetes de MoveIt/Gazebo que no hacen falta para este flujo. Compilamos únicamente lo necesario:
 
 ```bash
-colcon build --packages-up-to foundation_pose_tf gripper_control gripper_description xarm_api ros_tcp_endpoint
+colcon build --packages-up-to foundation_pose_tf gripper_control gripper_description xarm_api ros_tcp_endpoint uf_ros_lib
 ```
 
 Si algún paquete falla por dependencia faltante, revisa el error específico antes de intentar compilar todo el workspace.
